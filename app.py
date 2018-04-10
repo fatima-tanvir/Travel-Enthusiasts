@@ -7,7 +7,11 @@ app = Flask("MyApp")
 app.config[ 'SECRET_KEY' ] = 'jsbcfsbfjefebw237u3gdbdc'
 socketio = SocketIO( app )
 
-@app.route("/gallery.html")
+@app.route('/')
+def empty():
+    return "Hello"
+
+@app.route("/gallery")
 def gallery():
     auth = tweepy.OAuthHandler("0SKohKeusYV36sM7bKgLil0LZ","6aoAyxWbEhGjCrpv1EWSBEtXK5I10lsdiJAJlXm9lvf7E1v4XL")
     auth.set_access_token ("701267940885340161-mt2uIgz9vMPSFAzRtAkQjeZIqOp54er", "dkznlFrYZkIZyf0HI0X60xEXMaicnR2O1XwoWksJoLejO")
